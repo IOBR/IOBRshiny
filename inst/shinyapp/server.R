@@ -4,6 +4,7 @@ server <- function(input, output, session) {
   
   # inst/shinyapp/server
   source("server/TME_dec.R", local = TRUE)$value
+  source("server/Sig_cal.R", local = TRUE)$value
   # source(server_file("repository.R"), local = TRUE)
   # source(server_file("modules.R"), local = TRUE)
   # source(server_file("global.R"), local = TRUE)
