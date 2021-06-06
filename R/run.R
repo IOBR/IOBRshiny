@@ -15,6 +15,6 @@
 #' \dontrun{
 #' app_run()
 #' }
-app_run <- function(runMode = "client") {
+app_run <- function() {
   shiny::shinyAppFile(system.file("shinyapp", "app.R", package = "IOBRshiny"))
 }
