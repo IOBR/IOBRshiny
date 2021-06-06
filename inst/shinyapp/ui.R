@@ -20,7 +20,8 @@ ui <- tagList(
       img(src = "IOBR-logo.png", height = 49.6, style = "margin:-20px -15px -15px -15px")
     ),
     # # inst/shinyapp/ui
-    source("tabs/homeTab.R", local = TRUE)$value,
+    ui.page_home(),
+    #source("tabs/homeTab.R", local = TRUE)$value,
     source("tabs/TME_decTab.R", local = TRUE)$value,
     source("tabs/Sig_calTab.R", local = TRUE)$value,
     # ui.page_repository(),

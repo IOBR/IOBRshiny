@@ -1,5 +1,5 @@
 # Home Page
-
+ui.page_home <- function() {
   tabPanel(title = "Home", icon = icon("home"),
            tagList(
              tags$head(
@@ -15,6 +15,8 @@
            tags$div(class = "home",
                     img(src = "IOBR-Workflow.png", width = 900)
            )
-
+           
   )
+}
+  
 
