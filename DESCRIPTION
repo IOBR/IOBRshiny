@@ -3,7 +3,7 @@ Title: A shiny package for IOBR
 Version: 0.0.0.1
 Authors@R: person('Yi', 'Xiong', email = '390473111@qq.com', role = c('cre','aut'))
 Description: a shiny app for IOBR
-License: What license is it under?
+License: MIT + file LICENSE
 Imports: 
     attempt,
     config (>= 0.3.1),
