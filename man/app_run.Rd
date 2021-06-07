@@ -4,10 +4,7 @@
 \alias{app_run}
 \title{Run IOBR Shiny App}
 \usage{
-app_run(runMode = "client")
-}
-\arguments{
-\item{runMode}{default is 'client' for personal user, set it to 'server' for running on server.}
+app_run()
 }
 \description{
 Run IOBR Shiny App

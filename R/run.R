@@ -7,7 +7,6 @@
 #' Run IOBR Shiny App
 #'
 #' @importFrom shiny shinyAppFile
-#' @param runMode default is 'client' for personal user, set it to 'server' for running on server.
 #' @return NULL
 #' @export
 #'

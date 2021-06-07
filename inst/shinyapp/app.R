@@ -1,5 +1,6 @@
 
 # Global setting ------------------------------
+options(repos = BiocManager::repositories())
 
 library(shiny)
 library(shinydashboard)
