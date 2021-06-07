@@ -4,19 +4,26 @@
 library(shiny)
 library(shinydashboard)
 library(waiter)
+library(IOBR)
+library(DT)
+options(shiny.maxRequestSize=1024*1024^2)
 
-
-source(system.file("shinyapp", "server.R", package = "IOBRshiny"))
+# source(system.file("shinyapp", "server.R", package = "IOBRshiny"))
 
 # Put tabs here --------------------------------------------------------
-tabs_path <- system.file("shinyapp", "tabs", package = "IOBRshiny", mustWork = TRUE)
-tabs_file <- dir(tabs_path, pattern = "\\.R$", full.names = TRUE)
-sapply(tabs_file, function(x, y) source(x, local = y), y = environment())
+ui_path <- system.file("shinyapp", "ui", package = "IOBRshiny", mustWork = TRUE)
+ui_file <- dir(ui_path, pattern = "\\.R$", full.names = TRUE)
+sapply(ui_file, function(x, y) source(x, local = y), y = environment())
 
 # Put server here --------------------------------------------------------
 server_path <- system.file("shinyapp", "server", package = "IOBRshiny", mustWork = TRUE)
 server_file <- dir(server_path, pattern = "\\.R$", full.names = TRUE)
 sapply(server_file, function(x, y) source(x, local = y), y = environment())
+
+# Put modules here --------------------------------------------------------
+modules_path <- system.file("shinyapp", "modules", package = "IOBRshiny", mustWork = TRUE)
+modules_file <- dir(modules_path, pattern = "\\.R$", full.names = TRUE)
+sapply(modules_file, function(x, y) source(x, local = y), y = environment())
 
 
 
@@ -36,8 +43,8 @@ ui <- tagList(
     )
   ),
   shinyjs::useShinyjs(),
-  use_waiter(),
-  waiter_on_busy(html = spin_3k(), color = transparent(0.7)),
+  # waiter::use_waiter(),
+  # waiter::waiter_on_busy(html = spin_3k(), color = transparent(0.7)),
   navbarPage(
     id = "navbar",
     title = div(
@@ -45,9 +52,8 @@ ui <- tagList(
     ),
     # # inst/shinyapp/ui
     ui.page_home(),
-    #source("tabs/homeTab.R", local = TRUE)$value,
-    source("tabs/TME_decTab.R", local = TRUE)$value,
-    source("tabs/Sig_calTab.R", local = TRUE)$value,
+    ui.sig_cal(),
+    ui.TME_dec(),
     # ui.page_repository(),
     # ui.page_general_analysis(),
     # ui.page_pancan(),
@@ -59,6 +65,19 @@ ui <- tagList(
     theme = shinythemes::shinytheme("flatly")
   )
 )
+
+# Server Part ---------------------------------
+server <- function(input, output, session) {
+  
+  # inst/shinyapp/server
+  source("server/server-TME_dec.R", local = TRUE)
+  # source("server/server-sig_cal.R", local = TRUE)
+  server.sig_cal()
+  # source(server_file("repository.R"), local = TRUE)
+  # source(server_file("modules.R"), local = TRUE)
+  # source(server_file("global.R"), local = TRUE)
+  # source(server_file("general-analysis.R"), local = TRUE)
+}
 
 # Run the application ---------------------------------
 shiny::shinyApp(
