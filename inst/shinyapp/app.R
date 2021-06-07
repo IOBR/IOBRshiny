@@ -43,8 +43,8 @@ ui <- tagList(
     )
   ),
   shinyjs::useShinyjs(),
-  # waiter::use_waiter(),
-  # waiter::waiter_on_busy(html = spin_3k(), color = transparent(0.7)),
+  waiter::use_waiter(),
+  waiter::waiter_on_busy(html = spin_3k(), color = transparent(0.7)),
   navbarPage(
     id = "navbar",
     title = div(
@@ -53,16 +53,9 @@ ui <- tagList(
     # # inst/shinyapp/ui
     ui.page_home(),
     ui.sig_cal(),
-    ui.TME_dec(),
-    # ui.page_repository(),
-    # ui.page_general_analysis(),
-    # ui.page_pancan(),
-    # ui.page_global(),
-    # ui.page_help(),
-    # ui.page_developers(),
-    # footer = ui.footer(),
+    ui.tme_dec(),
     collapsible = TRUE,
-    theme = shinythemes::shinytheme("flatly")
+    theme = shinythemes::shinytheme("cerulean")
   )
 )
 
@@ -70,13 +63,9 @@ ui <- tagList(
 server <- function(input, output, session) {
   
   # inst/shinyapp/server
-  source("server/server-TME_dec.R", local = TRUE)
-  # source("server/server-sig_cal.R", local = TRUE)
   server.sig_cal()
-  # source(server_file("repository.R"), local = TRUE)
-  # source(server_file("modules.R"), local = TRUE)
-  # source(server_file("global.R"), local = TRUE)
-  # source(server_file("general-analysis.R"), local = TRUE)
+  server.tme_dec()
+
 }
 
 # Run the application ---------------------------------
