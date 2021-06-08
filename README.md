@@ -12,4 +12,12 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 A shiny application for IOBR package
 (<https://yi-xiong.shinyapps.io/IOBRshiny/>)
 
+To Run on local, several packages should be considered to be installed
+
+    library(shiny)
+    library(shinydashboard)
+    library(waiter)
+    library(IOBR)
+    library(DT)
+
 # Citation
