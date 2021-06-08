@@ -8,24 +8,6 @@ library(waiter)
 library(IOBR)
 library(DT)
 options(shiny.maxRequestSize=100*1024^2)
-#remotes::install_github("IOBR/IOBR",build = TRUE)
-# source(system.file("shinyapp", "server.R", package = "IOBRshiny"))
-
-# Put tabs here --------------------------------------------------------
-# ui_path <- system.file("shinyapp", "ui", package = "IOBRshiny", mustWork = TRUE)
-# ui_file <- dir(ui_path, pattern = "\\.R$", full.names = TRUE)
-# sapply(ui_file, function(x, y) source(x, local = y), y = environment())
-# 
-# # Put server here --------------------------------------------------------
-# server_path <- system.file("shinyapp", "server", package = "IOBRshiny", mustWork = TRUE)
-# server_file <- dir(server_path, pattern = "\\.R$", full.names = TRUE)
-# sapply(server_file, function(x, y) source(x, local = y), y = environment())
-# 
-# # Put modules here --------------------------------------------------------
-# modules_path <- system.file("shinyapp", "modules", package = "IOBRshiny", mustWork = TRUE)
-# modules_file <- dir(modules_path, pattern = "\\.R$", full.names = TRUE)
-# sapply(modules_file, function(x, y) source(x, local = y), y = environment())
-
 
 # Server ----------------------------------------------
 server.sig_cal <- function(input, output, session) {
