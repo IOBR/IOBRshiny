@@ -1,7 +1,7 @@
 
 # Global setting ------------------------------
-options(repos = BiocManager::repositories())
-
+options(repos = c(BiocManager::repositories(),"rforge" = "http://r-forge.r-project.org"))
+getOption("repos")
 library(shiny)
 library(shinydashboard)
 library(waiter)
