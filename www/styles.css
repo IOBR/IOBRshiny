@@ -1,0 +1,28 @@
+#home {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4.outer {
+  color: #488e91; 
+  font-style: italic;
+}
+
+.simple-ss {
+  width:900px;
+  height:280px;
+  background-color:white;
+  margin:auto;
+  background-image:url("slider.png");
+  background-position:0;
+  background-repeat:no-repeat;
+  background-size:cover;
+
+/* ANIMATING STUFF */
+  animation-name: slide;
+  animation-duration: 20s;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
