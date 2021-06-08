@@ -90,7 +90,7 @@ ui.modules_sig_cal <- function(id) {
       sidebarPanel = sidebarPanel(
         h4("Data upload and parameter selection"),
         tags$br(),
-        fileInput(ns("file"), label = "Upload file (Maximum Size: 100 MB", accept = c(".csv")),
+        fileInput(ns("file"), label = "Upload file (Maximum Size: 100 MB)", accept = c(".csv")),
         tags$a(href="https://zenodo.org/record/4906552#.YL8BtfkzaUk", "Example data"),
         textInput(ns("ID"), label = h3("Patients identifier (Default: ID)"), value = "ID"),
         selectInput(ns("signature"), label = h3("Signature"), 
@@ -204,7 +204,7 @@ ui.modules_tme_dec <- function(id) {
       sidebarPanel = sidebarPanel(
         h4("Data upload and parameter selection"),
         tags$br(),
-        fileInput(ns("file"), label = "Upload file (Maximum Size: 100 MB", accept = c(".csv")),
+        fileInput(ns("file"), label = "Upload file (Maximum Size: 100 MB)", accept = c(".csv")),
         tags$a(href="https://zenodo.org/record/4906552#.YL8BtfkzaUk", "Example data"),
         tags$br(),
         selectInput(ns("method"), label = h3("Deconvolution method"), 
